@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" type="text/css" href="./css/ttt.css">
+  </head>
+  <body>
+    <script src="./js/jquery-2.1.1.js"></script>
+    <!-- Whackjobs at GithubPages don't understand symlinks... -->
+    <script src="./ttt-core-solution/ttt-core.js"></script>
+    <script src="./js/ttt-view.js"></script>
+
+    <h1>Tic Tac Toe</h1>
+    <figure class='tic-tac-toe'>
+    </figure>
+
+    <script>
+      // Write your code here.
+      (function() {
+        game = new TTT.Game();
+        board = new TTT.View(game, $(".tic-tac-toe"));
+      })();
+    </script>
+  </body>
+</html>
