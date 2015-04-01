@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <title>Towers of Hanoi</title>
     <link rel="stylesheet" type="text/css" href="../css/hanoi.css">
