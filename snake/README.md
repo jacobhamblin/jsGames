@@ -1,4 +1,6 @@
-Simple Snake game implemented in JavaScript.
+# snake
+
+Simple snake game implemented in JavaScript.
 
 Open index.html to run.
 
