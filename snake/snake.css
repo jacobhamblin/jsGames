@@ -1,1 +1,70 @@
-/* empty stylesheet lol */
+html, body, section, article,
+h1, h2, p, strong, em, a {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+html, body, figure, figcaption, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 14px;
+  text-align: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: Roboto;
+  font-weight: 100;
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 30px;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+figure {
+  display: inline-block;
+  border: 2px solid #949494;
+}
+
+ul {
+}
+
+ul:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+li {
+  float: left;
+  width: 20px;
+  height: 20px;
+}
+
+.apple {
+  background: #FF9494;
+}
+
+.snake {
+  background: #D4BFFF;
+}

@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
-    <title>SNAKE!!!</title>
+    <title>Snake</title>
     <link rel="stylesheet" type="text/css" href="./snake.css">
   </head>
+
   <body>
+    <h1>Snake</h1>
+
+    <figure class="snake-game"></figure>
     <script src="./jquery-2.1.1.js"></script>
-    <!-- Whackjobs at GithubPages don't understand symlinks... -->
     <script src="./snake.js"></script>
     <script src="./snake-view.js"></script>
 
-    <h1>SNAKE</h1>
-    <figure class='snake'>
-    </figure>
-
     <script>
-      // Write your code here.
-      (function() {
-        var view = new SnakeGame.View($(".snake"));
-      })();
+      $(function () {
+        new SG.View($(".snake-game"));
+      });
     </script>
   </body>
 </html>

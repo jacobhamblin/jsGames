@@ -1,43 +1,85 @@
-if (typeof window.SnakeGame === "undefined") {
-  window.SnakeGame = {};
-}
+(function () {
+  if (typeof SG === "undefined") {
+    window.SG = {};
+  }
 
-var View = window.SnakeGame.View = function($el) {
-  debugger
-  this.board = new window.SnakeGame.Board();
-  this.$el = $el;
-  this.bindListener();
-  setInterval(this.step.bind(this), 500);
-};
+  var View = SG.View = function ($el) {
+    this.$el = $el;
 
-View.prototype.bindListener = function() {
-  $(".stack").keydown(function (event) {
-    var code = event.keyCode;
-    switch(code) {
-      case 38:
-        this.board.snake.turn('N');
-        break;
-      case 39:
-        this.board.snake.turn('E');
-        break;
-      case 40:
-        this.board.snake.turn('S');
-        break;
-      case 37:
-        this.board.snake.turn('W');
-        break;
-      default:
-        console.log("ha bad key teehee");
+    this.board = new SG.Board(20);
+    this.setupGrid();
+
+    this.intervalId = window.setInterval(
+      this.step.bind(this),
+      View.pace
+    );
+
+    $(window).on("keydown", this.handleKeyEvent.bind(this));
+  };
+
+  View.KEYS = {
+    38: "N",
+    39: "E",
+    40: "S",
+    37: "W",
+    87: "N",
+    65: "W",
+    83: "S",
+    68: "E"
+  };
+
+  View.pace = 90;
+
+  View.prototype.handleKeyEvent = function (event) {
+    if (View.KEYS[event.keyCode]) {
+      this.board.snake.turn(View.KEYS[event.keyCode]);
+    } else {
+      // some other key was pressed; ignore.
     }
-  });
-};
+  };
 
-View.prototype.step = function() {
-  this.board.snake.move();
-  // this.board.grid
-  this.render();
-};
+  View.prototype.render = function () {
+    // simple text based rendering
+    // this.$el.html(this.board.render());
 
-View.prototype.render = function() {
-  this.$el.html("<pre>" + this.board.render() + "</pre>");
-};
+    this.updateClasses(this.board.snake.segments, "snake");
+    this.updateClasses([this.board.apple.position], "apple");
+  };
+
+  View.prototype.updateClasses = function(coords, className) {
+    this.$li.filter("." + className).removeClass();
+
+    coords.forEach(function(coord){
+      var flatCoord = (coord.i * this.board.dim) + coord.j;
+      this.$li.eq(flatCoord).addClass(className);
+    }.bind(this));
+  };
+
+  View.prototype.setupGrid = function () {
+    var html = "";
+
+    for (var i = 0; i < this.board.dim; i++) {
+      html += "<ul>";
+      for (var j = 0; j < this.board.dim; j++) {
+        html += "<li></li>";
+      }
+      html += "</ul>";
+    }
+
+    this.$el.html(html);
+    this.$li = this.$el.find("li");
+  };
+
+  View.prototype.step = function () {
+    if (this.board.snake.segments.length > 0) {
+      this.board.snake.move();
+      this.render();
+    } else {
+      $("body").append('<br><h4>You lose.</h4>');
+      window.setTimeout(function() {
+        $("body").append('<br><br><a href="./index.html">play again?</a>');
+      }, 1000);
+      window.clearInterval(this.intervalId);
+    }
+  };
+})();
