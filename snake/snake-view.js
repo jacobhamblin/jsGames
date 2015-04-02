@@ -28,19 +28,23 @@
     68: "E"
   };
 
-  View.pace = 90;
+  View.pace = 125;
+
+  View.prototype.setPace = function () {
+    window.clearInterval(this.intervalId);
+    this.intervalId = window.setInterval(
+      this.step.bind(this),
+      View.pace
+    );
+  };
 
   View.prototype.handleKeyEvent = function (event) {
     if (View.KEYS[event.keyCode]) {
       this.board.snake.turn(View.KEYS[event.keyCode]);
-    } else {
-      // some other key was pressed; ignore.
     }
   };
 
   View.prototype.render = function () {
-    // simple text based rendering
-    // this.$el.html(this.board.render());
 
     this.updateClasses(this.board.snake.segments, "snake");
     this.updateClasses([this.board.apple.position], "apple");

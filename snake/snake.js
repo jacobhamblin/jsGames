@@ -29,7 +29,6 @@
     var x = Math.floor(Math.random() * this.board.dim);
     var y = Math.floor(Math.random() * this.board.dim);
 
-    // Don't place an apple where there is a snake
     while (this.board.snake.isOccupying([x, y])) {
       x = Math.floor(Math.random() * this.board.dim);
       y = Math.floor(Math.random() * this.board.dim);
@@ -62,6 +61,7 @@
   Snake.prototype.eatApple = function () {
     if (this.head().equals(this.board.apple.position)) {
       this.growTurns += 3;
+      SG.View.pace -= 3;
       return true;
     } else {
       return false;
@@ -100,32 +100,27 @@
   };
 
   Snake.prototype.move = function () {
-    // move snake forward
     this.segments.push(this.head().plus(Snake.DIFFS[this.dir]));
 
-    // allow turning again
     this.turning = false;
 
-    // maybe eat an apple
     if (this.eatApple()) {
       this.board.apple.replace();
+      window.SG.currentGame.setPace();
     }
 
-    // if not growing, remove tail segment
     if (this.growTurns > 0) {
       this.growTurns -= 1;
     } else {
       this.segments.shift();
     }
 
-    // destroy snake if it eats itself or runs off grid
     if (!this.isValid()) {
       this.segments = [];
     }
   };
 
   Snake.prototype.turn = function (dir) {
-    // avoid turning directly back on yourself
     if (Snake.DIFFS[this.dir].isOpposite(Snake.DIFFS[dir]) ||
       this.turning) {
       return;
