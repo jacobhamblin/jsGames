@@ -32,7 +32,7 @@
         bottom: 0;
         right: 0;
         left: 0;
-        width: 30%;
+        width: 45%;
         height: 100vh;
         margin-right: auto;
         margin-left: auto;
@@ -47,7 +47,7 @@
       }
 
       .games-ul > div {
-        width: 500px;
+        width: 600px;
         height: 50px;
         margin-left: auto;
         margin-right: auto;
@@ -56,20 +56,28 @@
 
       .game-preview {
         position: absolute;
+        max-height: 0;
+        overflow: hidden;
         margin-left: auto;
         margin-right: auto;
+        transition: max-height 0.2s ease;
+        z-index: 5;
+      }
+
+      .a {
+        margin-left: -95px;
       }
 
       .s {
-        margin-left: -25px;
+        margin-left: 20px;
       }
 
       .t {
-        margin-left: -38px;
+        margin-left: 10px;
       }
 
       .h {
-        margin-left: -60px;
+        margin-left: -15px;
       }
 
       h3 {
@@ -92,22 +100,22 @@
     <div class='content'>
       <ul class='games-ul'>
         <div><a href='http://jacobhamblin.github.io/asteroids'><h3>Asteroids</h3></a>
-          <div class='game-preview' style='display: none'>
+          <div class='game-preview'>
             <img class='a' src='http://jacobhamblin.github.io/asteroids/preview.png'>
           </div>
         </div>
         <div><a href='./snake/index.html'><h3>Snake</h3></a>
-          <div class='game-preview' style='display: none'>
+          <div class='game-preview'>
             <img class='s' src='./snake/preview.png' width='550' height='550'>
           </div>
         </div>
         <div><a href='./ttt/index.html'><h3>tic-tac-toe</h3></a>
-          <div class='game-preview' style='display: none'>
+          <div class='game-preview'>
             <img class='t' src='./ttt/preview.png' width='600' height='600'>
           </div>
         </div>
         <div><a href='./hanoi/html/index.html'><h3>Towers of Hanoi</h3></a>
-          <div class='game-preview' style='display: none'>
+          <div class='game-preview'>
             <img class='h' src='./hanoi/preview.png' width='640' height='300'>
           </div>
         </div>
@@ -116,11 +124,11 @@
 
     <script>
       $('.games-ul div a').mouseenter(function () {
-        $(event.target.parentElement.parentElement.children[1]).show();
+        $(event.target.parentElement.parentElement.children[1]).css('max-height', 900);
       });
 
       $('.games-ul div a').mouseleave(function () {
-        $(event.target.parentElement.parentElement.children[1]).hide();
+        $(event.target.parentElement.parentElement.children[1]).css('max-height', 0);
 
       });
     </script>
