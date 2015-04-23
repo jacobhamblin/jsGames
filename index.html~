@@ -94,7 +94,7 @@
 
     <div class='content'>
       <ul class='games-ul'>
-        <div><a href='http://jacobhamblin.github.io/asteroids'><h3>Asteroids</h3></a>
+        <div><a href='./asteroid/index.html'><h3>Asteroids</h3></a>
           <div class='game-preview' style='display: none'>
             <img class='a' src='./asteroid/preview.png'>
           </div>
