@@ -79,9 +79,9 @@
       this.board.snake.move();
       this.render();
     } else {
-      $("body").append('<br><h4>You lose.</h4>');
+      $('h4').show();
       window.setTimeout(function() {
-        $("body").append('<br><br><a href="./index.html">play again?</a>');
+        $(".play-again").show();
       }, 1000);
       window.clearInterval(this.intervalId);
     }

@@ -6,6 +6,24 @@ body {
   color: #aaa;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #aaa;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #aaa;
+}
+
+h4 {
+  font-size: 16px;
+}
+
 .h1 {
   margin: 0 auto;
 }

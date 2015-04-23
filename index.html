@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html, body {
+        padding: 0px;
+        margin: 0px;
+        font-family: 'Roboto';
+        font-weight: 300;
+      }
+
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #000;
+      }
+
+      .header {
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        display: block;
+      }
+
+      .content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 30%;
+        height: 100vh;
+        margin-right: auto;
+        margin-left: auto;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+      }
+
+      .games-ul {
+        margin-top: 50%;
+        margin-bottom: 50%;
+        padding-left: 0px;
+      }
+
+      .games-ul > div {
+        width: 500px;
+        height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      .game-preview {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .s {
+        margin-left: -25px;
+      }
+
+      .t {
+        margin-left: -38px;
+      }
+
+      .h {
+        margin-left: -60px;
+      }
+
+      h3 {
+        padding-top: 12px;
+        font-size: 20px;
+        font-weight: 300;
+      }
+    </style>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <title>jsGames</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <script src="./snake/jquery-2.1.1.js"></script>
+
+    <div class='header'>
+    </div>
+
+    <div class='content'>
+      <ul class='games-ul'>
+        <div><a href='./asteroid/index.html'><h3>Asteroids</h3></a>
+          <div class='game-preview' style='display: none'>
+            <img class='a' src='./asteroid/preview.png'>
+          </div>
+        </div>
+        <div><a href='./snake/index.html'><h3>Snake</h3></a>
+          <div class='game-preview' style='display: none'>
+            <img class='s' src='./snake/preview.png' width='550' height='550'>
+          </div>
+        </div>
+        <div><a href='./ttt/index.html'><h3>tic-tac-toe</h3></a>
+          <div class='game-preview' style='display: none'>
+            <img class='t' src='./ttt/preview.png' width='600' height='600'>
+          </div>
+        </div>
+        <div><a href='./hanoi/html/index.html'><h3>Towers of Hanoi</h3></a>
+          <div class='game-preview' style='display: none'>
+            <img class='h' src='./hanoi/preview.png' width='640' height='300'>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <script>
+      $('.games-ul div a').mouseenter(function () {
+        $(event.target.parentElement.parentElement.children[1]).show();
+      });
+
+      $('.games-ul div a').mouseleave(function () {
+        $(event.target.parentElement.parentElement.children[1]).hide();
+
+      });
+    </script>
+
+  </body>
+</html>

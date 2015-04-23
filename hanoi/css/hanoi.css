@@ -6,6 +6,16 @@ html, body, figure, figcaption, ul, li, h1 {
   text-align: inherit;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
 figure {
   margin: 0 auto;
   width: 580px;
@@ -64,7 +74,7 @@ ul:nth-child(2) {
 li {
   width: 0px;
   margin: 10px auto;
-  height: 50px;
+  height: 30px;
   background: #FF5050;
   border-radius: 25px;
 }
