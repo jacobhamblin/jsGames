@@ -3,6 +3,7 @@
   <head>
     <style>
       html, body {
+        overflow-y: scroll;
         padding: 0px;
         margin: 0px;
         font-family: 'Roboto';
@@ -47,7 +48,7 @@
       }
 
       .games-ul > div {
-        width: 600px;
+        width: 50%;
         height: 50px;
         margin-left: auto;
         margin-right: auto;
@@ -55,29 +56,17 @@
       }
 
       .game-preview {
+        width: 50%;
         position: absolute;
         max-height: 0;
         overflow: hidden;
-        margin-left: auto;
-        margin-right: auto;
         transition: max-height 0.2s ease;
         z-index: 5;
       }
 
-      .a {
-        margin-left: -95px;
-      }
-
-      .s {
-        margin-left: 20px;
-      }
-
-      .t {
-        margin-left: 10px;
-      }
-
-      .h {
-        margin-left: -15px;
+      .game-preview img {
+        margin: 0 auto;
+        width: 400px;
       }
 
       h3 {
@@ -101,22 +90,22 @@
       <ul class='games-ul'>
         <div><a href='http://jacobhamblin.github.io/asteroids'><h3>Asteroids</h3></a>
           <div class='game-preview'>
-            <img class='a' src='http://jacobhamblin.github.io/asteroids/preview.png'>
+            <img class='a' src='http://jacobhamblin.github.io/asteroids/preview.png' width='400'>
           </div>
         </div>
         <div><a href='./snake/index.html'><h3>Snake</h3></a>
           <div class='game-preview'>
-            <img class='s' src='./snake/preview.png' width='550' height='550'>
+            <img class='s' src='./snake/preview.png' width='400'>
           </div>
         </div>
         <div><a href='./ttt/index.html'><h3>tic-tac-toe</h3></a>
           <div class='game-preview'>
-            <img class='t' src='./ttt/preview.png' width='600' height='600'>
+            <img class='t' src='./ttt/preview.png' width='400'>
           </div>
         </div>
         <div><a href='./hanoi/html/index.html'><h3>Towers of Hanoi</h3></a>
           <div class='game-preview'>
-            <img class='h' src='./hanoi/preview.png' width='640' height='300'>
+            <img class='h' src='./hanoi/preview.png' width='400'>
           </div>
         </div>
       </ul>
