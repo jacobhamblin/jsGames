@@ -3,6 +3,7 @@
   <head>
     <style>
       html, body {
+        overflow-y: scroll;
         padding: 0px;
         margin: 0px;
         font-family: 'Roboto';
@@ -32,7 +33,11 @@
         bottom: 0;
         right: 0;
         left: 0;
+<<<<<<< HEAD
         width: 40%;
+=======
+        width: 45%;
+>>>>>>> gh-pages
         height: 100vh;
         margin-right: auto;
         margin-left: auto;
@@ -41,13 +46,13 @@
       }
 
       .games-ul {
-        margin-top: 50%;
-        margin-bottom: 50%;
+        margin-top: 20%;
+        margin-bottom: 20%;
         padding-left: 0px;
       }
 
       .games-ul > div {
-        width: 500px;
+        width: 50%;
         height: 50px;
         margin-left: auto;
         margin-right: auto;
@@ -55,30 +60,42 @@
       }
 
       .game-preview {
+        width: 50%;
         position: absolute;
+<<<<<<< HEAD
         margin-left: auto;
         margin-right: auto;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.2s ease;
+=======
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease;
+        z-index: 5;
+>>>>>>> gh-pages
       }
 
-      .s {
-        margin-left: -25px;
+      .game-preview img {
+        margin: 0 auto;
+        width: 300px;
       }
 
-      .t {
-        margin-left: -38px;
-      }
-
-      .h {
-        margin-left: -60px;
-      }
-
-      h3 {
+      .title {
         padding-top: 12px;
-        font-size: 20px;
-        font-weight: 300;
+      }
+
+      h2 {
+        text-align: center;
+        font-weight: 400;
+      }
+
+      h4 {
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
       }
     </style>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
@@ -94,6 +111,7 @@
 
     <div class='content'>
       <ul class='games-ul'>
+<<<<<<< HEAD
         <div><a href='http://jacobhamblin.github.io/asteroids'><h3>Asteroids</h3></a>
           <div class='game-preview' style='display: none'>
             <img class='a' src='http://jacobhamblin.github.io/asteroids//preview.png'>
@@ -112,19 +130,58 @@
         <div><a href='./hanoi/html/index.html'><h3>Towers of Hanoi</h3></a>
           <div class='game-preview'>
             <img class='h' src='./hanoi/preview.png' width='640' height='300'>
+=======
+        <h2>JavaScript Games</h2><br>
+        <p>Play with WASD, spacebar, mouse.</p><br><br>
+        <div><a href='http://jacobhamblin.github.io/asteroids'><span style='font-size: 20px; font-weight: 300;' class='title'>Asteroids</span></a> <a href='https://github.com/jacobhamblin/asteroids'>(github)</a>
+          <div class='game-preview'>
+            <img class='a' src='http://jacobhamblin.github.io/asteroids/preview.png' width='400'>
+          </div>
+        </div>
+        <div><a href='./snake/index.html'><span style='font-size: 20px; font-weight: 300' class='title'>Snake</span></a> <a href='https://github.com/jacobhamblin/jsGames/tree/master/snake'>(github)</a>
+          <div class='game-preview'>
+            <img class='s' src='./snake/preview.png' width='400'>
+          </div>
+        </div>
+        <div><a href='./ttt/index.html'><span style='font-size: 20px; font-weight: 300' class='title'>tic-tac-toe</span></a> <a href='https://github.com/jacobhamblin/jsGames/tree/master/ttt'>(github)</a>
+          <div class='game-preview'>
+            <img class='t' src='./ttt/preview.png' width='400'>
+          </div>
+        </div>
+        <div><a href='./hanoi/html/index.html'><span style='font-size: 20px; font-weight: 300' class='title'>Towers of Hanoi</span></a> <a href='https://github.com/jacobhamblin/jsGames/tree/master/hanoi'>(github)</a>
+          <div class='game-preview'>
+            <img class='h' src='./hanoi/preview.png' width='400'>
+          </div>
+        </div>
+
+        <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+        <h2>Ruby Games (terminal)</h2>
+        <br><br>
+        <div><a href='http://github.com/jacobhamblin/chess'><span style='font-size: 20px; font-weight: 300' class='title'>Chess</span></a>
+          <div class='game-preview'>
+            <img class='cs' src='http://i.imgur.com/vg7FqPT.jpg' width='400'>
+          </div>
+        </div>
+        <div><a href='http://github.com/jacobhamblin/checkers'><span style='font-size: 20px; font-weight: 300' class='title'>Checkers</span></a>
+
+          <div class='game-preview'>
+            <img class='cr' src='http://i.imgur.com/a9ov2A9.png' width='400'>
+>>>>>>> gh-pages
           </div>
         </div>
       </ul>
     </div>
 
     <script>
-      $('.games-ul div a').mouseenter(function () {
-        $(event.target.parentElement.parentElement.children[1]).show();
+      $('.title').mouseenter(function () {
+        $(event.target).addClass('chosen-game');
+        $(event.target.parentElement.parentElement.children[event.target.parentElement.parentElement.children.length-1]).css('max-height', 900);
       });
 
-      $('.games-ul div a').mouseleave(function () {
-        $(event.target.parentElement.parentElement.children[1]).hide();
-
+      $('.title').mouseleave(function () {
+        $(event.target).removeClass('chosen-game');
+        $(event.target.parentElement.parentElement.children[event.target.parentElement.parentElement.children.length-1]).css('max-height', 0);
       });
     </script>
 
