@@ -1,5 +1,9 @@
 ## js games
 
+[Live][link]
+
+[link]: http://jacobhamblin.github.io/jsGames
+
 # snake
 ![snake](./snake/preview.png)
 
