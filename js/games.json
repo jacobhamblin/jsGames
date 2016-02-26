@@ -1,0 +1,53 @@
+{
+  "jsGames": [
+    {
+      "name": "Unscramble",
+      "preview": "http://jacobhamblin.github.io/unscramble/img/preview.png",
+      "live": "http://jacobhamblin.github.io/unscramble",
+      "gh": "https://github.com/jacobhamblin/unscramble",
+      "description": "unscramble"
+    },
+    {
+      "name": "Asteroids",
+      "preview": "http://jacobhamblin.github.io/asteroids/preview.png",
+      "live": "http://jacobhamblin.github.io/asteroids",
+      "gh": "https://github.com/jacobhamblin/asteroids",
+      "description": "asteroids"
+    },
+    {
+      "name": "Snake",
+      "preview": "../snake/preview.png",
+      "live": "../snake/index.html",
+      "gh": "https://github.com/jacobhamblin/jsGames/tree/gh-pages/snake",
+      "description": "snake"
+    },
+    {
+      "name": "Tic-tac-toe",
+      "preview": "../ttt/preview.png",
+      "live": "../snake/index.html",
+      "gh": "https://github.com/jacobhamblin/jsGames/tree/gh-pages/ttt",
+      "description": "tic-tac-toe"
+    },
+    {
+      "name": "Towers of Hanoi",
+      "preview": "../hanoi/preview.png",
+      "live": "../snake/index.html",
+      "gh": "https://github.com/jacobhamblin/jsGames/tree/gh-pages/hanoi",
+      "description": "towers of hanoi"
+    }
+  ],
+  "rubyGames": [
+    {
+      "name": "Chess",
+      "preview": "http://i.imgur.com/vg7FqPT.jpg",
+      "gh": "http://github.com/jacobhamblin/chess",
+      "description": "chess"
+    },
+    {
+      "name": "Checkers",
+      "preview": "http://i.imgur.com/a9ov2A9.png",
+      "gh": "http://github.com/jacobhamblin/checkers",
+      "description": "checkers"
+    }
+  ]
+}

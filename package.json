@@ -1,0 +1,33 @@
+{
+  "name": "jsgames",
+  "version": "1.0.0",
+  "description": "some javascript games I made, mostly while studying at AppAcademy",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack -w --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobhamblin/jsGames.git"
+  },
+  "author": "Jacob Hamblin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobhamblin/jsGames/issues"
+  },
+  "homepage": "https://github.com/jacobhamblin/jsGames#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.3",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.4.2",
+    "path": "^0.12.7",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.14"
+  }
+}
