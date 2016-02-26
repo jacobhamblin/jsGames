@@ -1,0 +1,19 @@
+#centered {
+  margin: 0 auto;
+  max-width: 600px; }
+  #centered div.container {
+    height: 150px; }
+    #centered div.container div.info-container {
+      display: inline-block;
+      vertical-align: top; }
+    #centered div.container div.preview-container {
+      display: inline-block;
+      width: 200px;
+      height: 125px;
+      vertical-align: top;
+      margin: 12.5px; }
+      #centered div.container div.preview-container div {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 125px;
+        background-position: center; }

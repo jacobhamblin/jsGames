@@ -1,0 +1,28 @@
+#centered {
+  margin: 0 auto;
+  max-width: 600px;
+
+  div.container {
+    height: 150px;
+
+    div.info-container {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    div.preview-container {
+      display: inline-block;
+      width: 200px;
+      height: 125px;
+      vertical-align: top;
+      margin: 12.5px;
+
+      div {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 125px;
+        background-position: center;
+      }
+    }
+  }
+}

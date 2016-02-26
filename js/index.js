@@ -1,4 +1,5 @@
 import gamesObj from './games.json';
+import '../sass/index.scss';
 
 function prepGames(games) {
   for (let i = 0; i < games.length; i++) {
@@ -25,15 +26,19 @@ function prepGames(games) {
     const preview = document.createElement('div');
     preview.style = "background-image: url('" + games[i].preview + "')";
 
+    const previewContainer = document.createElement('div');
+    previewContainer.className = 'preview-container';
+    previewContainer.appendChild(preview);
+
     container.appendChild(infoContainer);
-    container.appendChild(preview);
+    container.appendChild(previewContainer);
 
     infoContainer.appendChild(title);
     infoContainer.appendChild(description);
     if (live) infoContainer.appendChild(live);
     infoContainer.appendChild(gh);
 
-    document.body.appendChild(container);
+    document.querySelector('#centered').appendChild(container);
   }
 };
 

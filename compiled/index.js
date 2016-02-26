@@ -50,6 +50,8 @@
 
 	var _games2 = _interopRequireDefault(_games);
 
+	__webpack_require__(2);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function prepGames(games) {
@@ -77,15 +79,19 @@
 	        var preview = document.createElement('div');
 	        preview.style = "background-image: url('" + games[i].preview + "')";
 
+	        var previewContainer = document.createElement('div');
+	        previewContainer.className = 'preview-container';
+	        previewContainer.appendChild(preview);
+
 	        container.appendChild(infoContainer);
-	        container.appendChild(preview);
+	        container.appendChild(previewContainer);
 
 	        infoContainer.appendChild(title);
 	        infoContainer.appendChild(description);
 	        if (live) infoContainer.appendChild(live);
 	        infoContainer.appendChild(gh);
 
-	        document.body.appendChild(container);
+	        document.querySelector('#centered').appendChild(container);
 	    }
 	};
 
@@ -151,6 +157,12 @@
 			}
 		]
 	};
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
