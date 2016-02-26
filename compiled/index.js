@@ -141,8 +141,8 @@
 			},
 			{
 				"name": "Snake",
-				"preview": "../snake/preview.png",
-				"live": "../snake/index.html",
+				"preview": "http://jacobhamblin.github.io/jsGames/snake/preview.png",
+				"live": "http://jacobhamblin.github.io/jsGames/snake",
 				"gh": "https://github.com/jacobhamblin/jsGames/tree/gh-pages/snake",
 				"li1": "Eating apples extends the snake and increases travel speed",
 				"li2": "Displayed through divs and CSS"
