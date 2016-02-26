@@ -1,7 +1,7 @@
 import gamesObj from './games.json';
 import '../sass/index.scss';
 
-function prepGames(games) {
+function prepGames(games, domEl) {
   for (let i = 0; i < games.length; i++) {
     const container = document.createElement('div');
     container.className = "container";
@@ -56,9 +56,9 @@ function prepGames(games) {
     if (live) infoContainer.appendChild(live);
     infoContainer.appendChild(gh);
 
-    document.querySelector('#centered').appendChild(container);
+    domEl.appendChild(container);
   }
 };
 
-prepGames(gamesObj.jsGames);
-prepGames(gamesObj.rubyGames);
+prepGames(gamesObj.jsGames, document.querySelector('#js'));
+prepGames(gamesObj.rubyGames, document.querySelector('#ruby'));

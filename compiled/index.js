@@ -54,7 +54,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function prepGames(games) {
+	function prepGames(games, domEl) {
 	    for (var i = 0; i < games.length; i++) {
 	        var container = document.createElement('div');
 	        container.className = "container";
@@ -109,12 +109,12 @@
 	        if (live) infoContainer.appendChild(live);
 	        infoContainer.appendChild(gh);
 
-	        document.querySelector('#centered').appendChild(container);
+	        domEl.appendChild(container);
 	    }
 	};
 
-	prepGames(_games2.default.jsGames);
-	prepGames(_games2.default.rubyGames);
+	prepGames(_games2.default.jsGames, document.querySelector('#js'));
+	prepGames(_games2.default.rubyGames, document.querySelector('#ruby'));
 
 /***/ },
 /* 1 */
