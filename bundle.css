@@ -1,19 +1,42 @@
-#centered {
-  margin: 0 auto;
-  max-width: 600px; }
-  #centered div.container {
-    height: 150px; }
-    #centered div.container div.info-container {
-      display: inline-block;
-      vertical-align: top; }
-    #centered div.container div.preview-container {
-      display: inline-block;
-      width: 200px;
-      height: 125px;
-      vertical-align: top;
-      margin: 12.5px; }
-      #centered div.container div.preview-container div {
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 125px;
-        background-position: center; }
+body {
+  font-family: "Roboto", Arial;
+  color: #333;
+  font-size: 0.9em; }
+  body #centered {
+    margin: 0 auto;
+    max-width: 600px; }
+    body #centered div.container {
+      height: 150px;
+      margin: 1em 0;
+      background-color: #f7f7f7; }
+      body #centered div.container div.info-container {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 345px;
+        padding: 0 1em; }
+        body #centered div.container div.info-container ul {
+          list-style-type: none;
+          font-size: 0.8em; }
+          body #centered div.container div.info-container ul li {
+            margin: 0.4em 0; }
+        body #centered div.container div.info-container .link {
+          margin-right: 2em;
+          text-decoration: none;
+          color: #222; }
+      body #centered div.container div.preview-container {
+        display: inline-block;
+        width: 200px;
+        height: 150px;
+        vertical-align: top;
+        float: right; }
+        body #centered div.container div.preview-container div.Unscramble {
+          background-size: 200%; }
+        body #centered div.container div.preview-container div.Asteroids {
+          background-size: 150%; }
+        body #centered div.container div.preview-container div.Checkers {
+          background-position: left; }
+        body #centered div.container div.preview-container div {
+          background-size: cover;
+          background-repeat: no-repeat;
+          height: 150px;
+          background-position: center; }

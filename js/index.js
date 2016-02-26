@@ -9,32 +9,50 @@ function prepGames(games) {
     const infoContainer = document.createElement('div');
     infoContainer.className = "info-container";
 
-    const title = document.createElement('h2');
+    const title = document.createElement('h3');
     title.innerText = games[i].name;
 
-    const description = document.createElement('p');
-    description.innerText = games[i].description;
+    const ul = document.createElement('ul');
+    const li1 = document.createElement('li');
+    li1.innerText = games[i].li1;
+    const li2 = document.createElement('li');
+    li2.innerText = games[i].li2;
+    ul.appendChild(li1);
+    ul.appendChild(li2);
 
-    const live = document.createElement('a');
-    live.href = games[i].live;
-    live.innerText = 'live';
+    // const description = document.createElement('p');
+    // description.innerText = games[i].description;
+
+    let prevLink = false, live = false;
+
+    if (games[i].live) {
+      live = document.createElement('a');
+      live.href = games[i].live;
+      prevLink = live.cloneNode(true);
+      live.innerText = 'live';
+      live.className = 'link';
+    }
 
     const gh = document.createElement('a');
     gh.href = games[i].gh;
     gh.innerText = 'github';
+    gh.className = 'link';
 
     const preview = document.createElement('div');
     preview.style = "background-image: url('" + games[i].preview + "')";
+    preview.className = games[i].name;
+    if (prevLink) prevLink.appendChild(preview);
+
 
     const previewContainer = document.createElement('div');
     previewContainer.className = 'preview-container';
-    previewContainer.appendChild(preview);
+    prevLink ? previewContainer.appendChild(prevLink) : previewContainer.appendChild(preview);
 
     container.appendChild(infoContainer);
     container.appendChild(previewContainer);
 
     infoContainer.appendChild(title);
-    infoContainer.appendChild(description);
+    infoContainer.appendChild(ul);
     if (live) infoContainer.appendChild(live);
     infoContainer.appendChild(gh);
 
@@ -44,5 +62,3 @@ function prepGames(games) {
 
 prepGames(gamesObj.jsGames);
 prepGames(gamesObj.rubyGames);
-
-console.log(games);
