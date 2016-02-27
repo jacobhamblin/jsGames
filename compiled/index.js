@@ -56,14 +56,28 @@
 
 	function prepGames(games, domEl) {
 	    for (var i = 0; i < games.length; i++) {
+	        var live = undefined;
+
 	        var container = document.createElement('div');
-	        container.className = "container";
+	        container.className = "game-container";
 
 	        var infoContainer = document.createElement('div');
 	        infoContainer.className = "info-container";
 
+	        var destLink = document.createElement('a');
+	        destLink.href = games[i].live ? games[i].live : games[i].gh;
+
+	        if (games[i].live) {
+	            live = document.createElement('a');
+	            live.href = games[i].live;
+	            live.innerText = 'live';
+	            live.className = 'link';
+	        }
+
 	        var title = document.createElement('h3');
 	        title.innerText = games[i].name;
+	        var titleLink = destLink.cloneNode(true);
+	        titleLink.appendChild(title);
 
 	        var ul = document.createElement('ul');
 	        var li1 = document.createElement('li');
@@ -76,17 +90,6 @@
 	        // const description = document.createElement('p');
 	        // description.innerText = games[i].description;
 
-	        var prevLink = false,
-	            live = false;
-
-	        if (games[i].live) {
-	            live = document.createElement('a');
-	            live.href = games[i].live;
-	            prevLink = live.cloneNode(true);
-	            live.innerText = 'live';
-	            live.className = 'link';
-	        }
-
 	        var gh = document.createElement('a');
 	        gh.href = games[i].gh;
 	        gh.innerText = 'github';
@@ -95,16 +98,17 @@
 	        var preview = document.createElement('div');
 	        preview.style = "background-image: url('" + games[i].preview + "')";
 	        preview.className = games[i].name;
-	        if (prevLink) prevLink.appendChild(preview);
+	        var prevLink = destLink.cloneNode(true);
+	        prevLink.appendChild(preview);
 
 	        var previewContainer = document.createElement('div');
 	        previewContainer.className = 'preview-container';
-	        prevLink ? previewContainer.appendChild(prevLink) : previewContainer.appendChild(preview);
+	        previewContainer.appendChild(prevLink);
 
 	        container.appendChild(infoContainer);
 	        container.appendChild(previewContainer);
 
-	        infoContainer.appendChild(title);
+	        infoContainer.appendChild(titleLink);
 	        infoContainer.appendChild(ul);
 	        if (live) infoContainer.appendChild(live);
 	        infoContainer.appendChild(gh);

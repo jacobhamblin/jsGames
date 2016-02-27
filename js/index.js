@@ -3,14 +3,28 @@ import '../sass/index.scss';
 
 function prepGames(games, domEl) {
   for (let i = 0; i < games.length; i++) {
+    let live;
+
     const container = document.createElement('div');
-    container.className = "container";
+    container.className = "game-container";
 
     const infoContainer = document.createElement('div');
     infoContainer.className = "info-container";
 
+    const destLink = document.createElement('a');
+    destLink.href = (games[i].live ? games[i].live : games[i].gh);
+
+    if (games[i].live) {
+      live = document.createElement('a');
+      live.href = games[i].live;
+      live.innerText = 'live';
+      live.className = 'link';
+    }
+
     const title = document.createElement('h3');
     title.innerText = games[i].name;
+    const titleLink = destLink.cloneNode(true);
+    titleLink.appendChild(title);
 
     const ul = document.createElement('ul');
     const li1 = document.createElement('li');
@@ -23,15 +37,8 @@ function prepGames(games, domEl) {
     // const description = document.createElement('p');
     // description.innerText = games[i].description;
 
-    let prevLink = false, live = false;
 
-    if (games[i].live) {
-      live = document.createElement('a');
-      live.href = games[i].live;
-      prevLink = live.cloneNode(true);
-      live.innerText = 'live';
-      live.className = 'link';
-    }
+
 
     const gh = document.createElement('a');
     gh.href = games[i].gh;
@@ -41,17 +48,18 @@ function prepGames(games, domEl) {
     const preview = document.createElement('div');
     preview.style = "background-image: url('" + games[i].preview + "')";
     preview.className = games[i].name;
-    if (prevLink) prevLink.appendChild(preview);
+    const prevLink = destLink.cloneNode(true);
+    prevLink.appendChild(preview);
 
 
     const previewContainer = document.createElement('div');
     previewContainer.className = 'preview-container';
-    prevLink ? previewContainer.appendChild(prevLink) : previewContainer.appendChild(preview);
+    previewContainer.appendChild(prevLink);
 
     container.appendChild(infoContainer);
     container.appendChild(previewContainer);
 
-    infoContainer.appendChild(title);
+    infoContainer.appendChild(titleLink);
     infoContainer.appendChild(ul);
     if (live) infoContainer.appendChild(live);
     infoContainer.appendChild(gh);
