@@ -5,9 +5,11 @@ body {
   body #centered {
     margin: 0 auto;
     max-width: 600px; }
+    body #centered h2 {
+      margin: 2em 0; }
     body #centered div.container {
       height: 150px;
-      margin: 1em 0;
+      margin: 2em 0;
       background-color: #f7f7f7; }
       body #centered div.container div.info-container {
         display: inline-block;
